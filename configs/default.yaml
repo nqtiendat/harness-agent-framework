@@ -1,0 +1,7 @@
+environment: dev
+storage_dir: storage
+default_model: mock
+max_iterations: 8
+max_tool_calls: 16
+max_seconds: 120
+

@@ -1,0 +1,6 @@
+max_iterations: 8
+max_tool_calls: 16
+max_seconds: 120
+max_model_calls: 16
+max_estimated_tokens: 64000
+

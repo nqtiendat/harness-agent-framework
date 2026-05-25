@@ -1,0 +1,9 @@
+name: example_skill
+version: "0.1.0"
+description: Example reusable skill package.
+commands:
+  - name: summarize
+    description: Summarize a supplied text artifact.
+    script: scripts/summarize.md
+    permissions: []
+

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Select-Object -First 200)",
+      "Bash(Get-ChildItem -Path \"D:\\\\FDX\\\\Project\\\\harness-agent-framework\\\\skills\" -ErrorAction SilentlyContinue)",
+      "Bash(Select-Object Name, PSIsContainer)",
+      "Bash(xargs grep -l \"ExecutionTracer\\\\|ExecutionTrace\")",
+      "PowerShell(python -m pytest --collect-only -q 2>&1)",
+      "PowerShell(python -m pytest -q 2>&1)"
+    ]
+  }
+}

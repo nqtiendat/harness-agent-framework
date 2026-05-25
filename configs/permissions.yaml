@@ -1,0 +1,11 @@
+default_policy: ask
+rules:
+  - resource: filesystem.read
+    decision: allow
+  - resource: filesystem.write
+    decision: deny
+  - resource: shell.command
+    decision: deny
+  - resource: http.request
+    decision: ask
+

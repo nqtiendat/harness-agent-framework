@@ -1,0 +1,59 @@
+[project]
+name = "agent-harness-framework"
+version = "0.1.0"
+description = "Production-oriented harness infrastructure for AI agents."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "anyio>=4.0.0",
+  "httpx>=0.27.0",
+  "networkx>=3.2.0",
+  "numpy>=1.26.0",
+  "packaging>=24.0",
+  "pydantic>=2.7.0",
+  "pydantic-settings>=2.2.0",
+  "pyyaml>=6.0.1",
+  "rich>=13.7.0",
+  "sqlalchemy>=2.0.0",
+  "structlog>=24.1.0",
+  "tenacity>=8.2.0",
+  "typer>=0.12.0",
+]
+
+[project.optional-dependencies]
+llm = [
+  "anthropic>=0.34.0",
+  "litellm>=1.40.0",
+  "openai>=1.35.0",
+  "tiktoken>=0.7.0",
+]
+service = [
+  "fastapi>=0.111.0",
+  "uvicorn>=0.30.0",
+  "orjson>=3.10.0",
+]
+sandbox = [
+  "docker>=7.0.0",
+  "restrictedpython>=7.1",
+]
+test = [
+  "freezegun>=1.5.0",
+  "pytest>=8.2.0",
+  "pytest-asyncio>=0.23.0",
+  "respx>=0.21.0",
+]
+
+[project.scripts]
+agent-harness = "agent_harness.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agent_harness"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+asyncio_mode = "auto"

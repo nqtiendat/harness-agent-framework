@@ -1,0 +1,7 @@
+commands:
+  summarize:
+    input:
+      text: string
+    output:
+      summary: string
+
